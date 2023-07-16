@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 80px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+      }
+
+      .result-container {
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .result-container h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .result-container p {
+        font-size: 16px;
+        font-weight: bold;
+        overflow-wrap: anywhere;
+      }
+    </style>
+    <script>
+      function validateForm() {
+        var input1 = document.getElementById("input1").value;
+        var input2 = document.getElementById("input2").value;
+        var input3 = document.getElementById("input3").value;
+
+        if (input1 !== "s" && input1 !== "a") {
+          alert("Please enter 's' for symmetric or 'a' for asymmetric in Input 1");
+          return false;
+        }
+
+        if (input2 !== "enc" && input2 !== "dec") {
+          alert("Please enter 'enc' or 'dec' for Input 2");
+          return false;
+        }
+
+        if (input3.trim() === "") {
+          alert("Please enter a value for Input 3");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>AES Algorithms</h1>
+      <form action="/submit" method="post" onsubmit="return validateForm()">
+        <div class="form-group">
+          <label for="input1">Algorithm:</label>
+          <input type="text" id="input1" name="input1" placeholder="s: symmetric / a: asymmetric" required>
+        </div>
+        <div class="form-group">
+          <label for="input2">Payload:</label>
+          <input type="text" id="input2" name="input2" placeholder="enc / dec" required>
+        </div>
+        <div class="form-group">
+          <label for="input3">Payload:</label>
+          <input type="text" id="input3" name="input3" placeholder="payload" required>
+        </div>
+        <div style="text-align: center;">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      <div class="result-container">
+        <% if (result) { %>
+          <h2>Result</h2>
+          <p><%= result %></p>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "aes-rsa-encryption-algorithms",
+  "version": "1.0.0",
+  "description": "Node.js AES-RSA Encryption Algorithms: Secure data encryption and decryption using industry-standard cryptographic techniques. Code examples and utilities for seamless integration and enhanced data protection by Bhupendra Singh",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bhupi2508/AES-RSA-Encryption-Algorithms.git"
+  },
+  "author": "Bhupendra Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bhupi2508/AES-RSA-Encryption-Algorithms/issues"
+  },
+  "homepage": "https://github.com/Bhupi2508/AES-RSA-Encryption-Algorithms#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodeman": "^1.1.2"
+  }
+}
